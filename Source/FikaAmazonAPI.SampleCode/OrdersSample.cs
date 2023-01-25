@@ -58,16 +58,16 @@ namespace FikaAmazonAPI.SampleCode
         /// </summary>
         public void GetOrdersPIISimple()
         {
-            ParameterOrderList serachOrderList = new ParameterOrderList();
-            serachOrderList.CreatedAfter = DateTime.UtcNow.AddMinutes(-600000);
+            ParameterOrderList searchOrderList = new ParameterOrderList();
+            searchOrderList.CreatedAfter = DateTime.UtcNow.AddMinutes(-600000);
 
-            serachOrderList.OrderStatuses = new List<OrderStatuses>();
-            serachOrderList.OrderStatuses.Add(OrderStatuses.Unshipped);
+            searchOrderList.OrderStatuses = new List<OrderStatuses>();
+            searchOrderList.OrderStatuses.Add(OrderStatuses.Unshipped);
 
             //You must have valid PII developer to be able to call this 
-            serachOrderList.IsNeedRestrictedDataToken = true;
+            searchOrderList.IsNeedRestrictedDataToken = true;
 
-            var orders = amazonConnection.Orders.GetOrders(serachOrderList);
+            var orders = amazonConnection.Orders.GetOrders(searchOrderList);
         }
         public void GetOrdersPIIAdvance()
         {

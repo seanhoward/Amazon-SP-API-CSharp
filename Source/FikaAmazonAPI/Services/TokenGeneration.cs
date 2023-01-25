@@ -87,7 +87,7 @@ namespace FikaAmazonAPI.Services
                 {
                     AccessKeyId = response1.Credentials.AccessKeyId,
                     SecretKey = response1.Credentials.SecretAccessKey,
-                    Region = amazonCredential.MarketPlace.Region.RegionName
+                    Region = amazonCredential.MarketPlace.Region.RegionId
                 };
 
                 amazonCredential.SetAWSAuthenticationTokenData(new AWSAuthenticationTokenData()
